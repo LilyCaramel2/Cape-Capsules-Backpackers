@@ -4,15 +4,15 @@ import Button from '../components/Button';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center">
-      {/* Background Image with Overlay - NO GRADIENTS except the dark overlay */}
+      {/* Background Image with Overlay - Lighter, warmer feel */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(/images/hero-placeholder.jpg)',
-          backgroundColor: '#083E8C' // Fallback if image doesn't load
+          backgroundColor: '#E8DCC4' // Warm sand color fallback
         }}
       >
-        <div className="absolute inset-0 gradient-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-ink/40 via-transparent to-navy-ink/60"></div>
       </div>
 
       {/* Content */}
