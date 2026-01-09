@@ -2,85 +2,55 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-navy-ink text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1: Brand */}
+    <footer className="bg-brand-red text-white">
+      <div className="max-w-5xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* Column 1: Quick Links */}
           <div>
-            <img 
-              src="/brand/cape-capsules-logo.jpg" 
-              alt="Cape Capsules" 
-              className="w-[120px] h-auto mb-4 brightness-0 invert"
-              onError={(e) => e.target.style.display = 'none'}
-            />
-            <p className="text-sm text-gray-300 mb-4">Private capsules steps from the surf</p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-turquoise-surf transition-colors">📷</a>
-              <a href="#" className="hover:text-turquoise-surf transition-colors">📘</a>
-              <a href="#" className="hover:text-turquoise-surf transition-colors">🎵</a>
-              <a href="https://wa.me/27824131499" className="hover:text-turquoise-surf transition-colors">💬</a>
-            </div>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#home" className="hover:text-turquoise-surf transition-colors">Home</a></li>
-              <li><a href="#pricing" className="hover:text-turquoise-surf transition-colors">Capsules & Pricing</a></li>
-              <li><a href="#amenities" className="hover:text-turquoise-surf transition-colors">Amenities</a></li>
-              <li><a href="#location" className="hover:text-turquoise-surf transition-colors">Location</a></li>
-              <li><a href="#gallery" className="hover:text-turquoise-surf transition-colors">Gallery</a></li>
-              <li><a href="#faq" className="hover:text-turquoise-surf transition-colors">FAQ</a></li>
-              <li><a href="#booking" className="hover:text-turquoise-surf transition-colors">Contact</a></li>
+            <h3 className="text-white mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#pricing">Capsules & Pricing</a></li>
+              <li><a href="#amenities">Amenities</a></li>
+              <li><a href="#location">Location</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#booking">Contact</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Stay Types */}
+          {/* Column 2: Stay Types */}
           <div>
-            <h4 className="font-bold mb-4">Stay Types</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#pricing" className="hover:text-turquoise-surf transition-colors">Private Capsules</a></li>
-              <li><a href="#pricing" className="hover:text-turquoise-surf transition-colors">Weekend Packages</a></li>
-              <li><a href="#pricing" className="hover:text-turquoise-surf transition-colors">Weekly Packages</a></li>
-              <li><a href="#booking" className="hover:text-turquoise-surf transition-colors">Long-Term Stays</a></li>
+            <h3 className="text-white mb-4">Stay Types</h3>
+            <ul className="space-y-2">
+              <li><a href="#pricing">Private Capsules</a></li>
+              <li><a href="#pricing">Weekend Packages</a></li>
+              <li><a href="#pricing">Weekly Packages</a></li>
+              <li><a href="#booking">Long-Term Stays</a></li>
             </ul>
           </div>
 
-          {/* Column 4: Contact & Legal */}
+          {/* Column 3: Contact */}
           <div>
-            <h4 className="font-bold mb-4">Contact</h4>
-            <div className="space-y-2 text-sm">
+            <h3 className="text-white mb-4">Contact</h3>
+            <div className="space-y-2">
               <p>Muizenberg Beach<br/>Cape Town, Western Cape<br/>South Africa</p>
-              <p><a href="tel:+27824131499" className="hover:text-turquoise-surf transition-colors">+27 82 413 1499</a></p>
-              <p><a href="mailto:info@capecapsules.co.za" className="hover:text-turquoise-surf transition-colors">info@capecapsules.co.za</a></p>
-              <p className="mt-4 text-xs text-gray-400">
-                R500 refundable deposit applies<br/>
-                Cannabis: Designated areas only<br/>
-                Check-out: 10:00 AM
-              </p>
+              <p><a href="tel:+27824131499">+27 82 413 1499</a></p>
+              <p><a href="mailto:info@capecapsules.co.za">info@capecapsules.co.za</a></p>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-            <p>© 2026 Cape Capsules Backpackers. All rights reserved.</p>
-            <p>
-              Digital strategy & design by{' '}
-              <a 
-                href="https://carameldigitaldesign.online" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-turquoise-surf hover:text-white transition-colors"
-              >
-                Caramel Digital Design
-              </a>
-            </p>
-          </div>
+        {/* Bottom info */}
+        <div className="border-t border-white border-opacity-20 mt-8 pt-6 space-y-2">
+          <p className="text-sm">R500 refundable deposit applies to all bookings</p>
+          <p className="text-sm">
+            Digital strategy & design by{' '}
+            <a href="https://carameldigitaldesign.online" target="_blank" rel="noopener noreferrer" className="underline">
+              Caramel Digital Design
+            </a>
+          </p>
         </div>
       </div>
     </footer>
