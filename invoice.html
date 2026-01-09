@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Cape Capsules Digital Upgrade | Caramel Digital Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ocean-blue: #0B5ED7;
+            --deep-sea-blue: #083E8C;
+            --turquoise-surf: #1ECAD3;
+            --hut-yellow: #FFD400;
+            --pure-white: #FFFFFF;
+            --sand-white: #F6F1E6;
+            --navy-ink: #0B1F3B;
+            --lotus-purple: #D946EF;
+            --lotus-cyan: #06B6D4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--sand-white);
+            color: var(--navy-ink);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .invoice-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--pure-white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .invoice-header {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--turquoise-surf));
+            color: var(--pure-white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .invoice-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        .invoice-header p {
+            font-size: 1.125rem;
+        }
+
+        .invoice-body {
+            padding: 3rem 2rem;
+        }
+
+        .invoice-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--sand-white);
+        }
+
+        .invoice-meta h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--ocean-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .invoice-meta p {
+            margin: 0.25rem 0;
+            color: var(--navy-ink);
+        }
+
+        .invoice-number {
+            background: var(--hut-yellow);
+            color: var(--navy-ink);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        thead {
+            background: var(--ocean-blue);
+            color: var(--pure-white);
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--sand-white);
+        }
+
+        tbody tr:hover {
+            background: rgba(11, 94, 215, 0.05);
+        }
+
+        td {
+            padding: 1rem;
+        }
+
+        .item-description {
+            font-size: 0.875rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .totals {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--sand-white);
+        }
+
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+        }
+
+        .totals-row.subtotal {
+            color: #666;
+        }
+
+        .totals-row.deposit {
+            color: var(--turquoise-surf);
+            font-weight: 600;
+        }
+
+        .totals-row.total {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--ocean-blue);
+            padding-top: 1rem;
+            border-top: 2px solid var(--ocean-blue);
+        }
+
+        .payment-options {
+            background: rgba(11, 94, 215, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .payment-options h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--ocean-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .option {
+            background: var(--pure-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 2px solid var(--sand-white);
+        }
+
+        .option.recommended {
+            border-color: var(--hut-yellow);
+            position: relative;
+        }
+
+        .option.recommended::before {
+            content: "RECOMMENDED";
+            position: absolute;
+            top: -12px;
+            right: 1rem;
+            background: var(--hut-yellow);
+            color: var(--navy-ink);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .option h4 {
+            color: var(--turquoise-surf);
+            margin-bottom: 0.5rem;
+        }
+
+        .option-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--ocean-blue);
+            margin: 0.5rem 0;
+        }
+
+        .terms {
+            background: var(--sand-white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .terms h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--ocean-blue);
+            margin-bottom: 1rem;
+        }
+
+        .terms ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .terms li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .terms li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--turquoise-surf);
+            font-weight: bold;
+        }
+
+        .invoice-footer {
+            background: var(--navy-ink);
+            color: var(--pure-white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .invoice-footer p {
+            margin: 0.5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--hut-yellow);
+            color: var(--navy-ink);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            margin: 1rem 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 212, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--turquoise-surf);
+            color: var(--turquoise-surf);
+        }
+
+        .btn-secondary:hover {
+            background: var(--turquoise-surf);
+            color: var(--navy-ink);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .invoice-footer .btn {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .invoice-meta {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-container">
+        <!-- HEADER -->
+        <div class="invoice-header">
+            <h1>Invoice</h1>
+            <p>Cape Capsules Digital Upgrade Package</p>
+        </div>
+
+        <!-- BODY -->
+        <div class="invoice-body">
+            <!-- META INFO -->
+            <div class="invoice-meta">
+                <div>
+                    <h3>From:</h3>
+                    <p><strong>Caramel Digital Design</strong></p>
+                    <p>Lily Godden</p>
+                    <p>Cape Town, Western Cape, South Africa</p>
+                    <p>Email: lily@carameldigitaldesign.online</p>
+                    <p>Web: www.carameldigitaldesign.online</p>
+                </div>
+                <div>
+                    <h3>To:</h3>
+                    <p><strong>Cape Capsules Backpackers</strong></p>
+                    <p>Muizenberg, Cape Town</p>
+                    <p>www.capecapsules.co.za</p>
+                    <div class="invoice-number">Invoice #CC-2026-001</div>
+                    <p style="margin-top: 1rem;"><strong>Date:</strong> January 9, 2026</p>
+                    <p><strong>Due:</strong> Upon Agreement</p>
+                </div>
+            </div>
+
+            <!-- SERVICES TABLE -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Description</th>
+                        <th style="text-align: right;">Quantity</th>
+                        <th style="text-align: right;">Rate</th>
+                        <th style="text-align: right;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Website Design & Development</strong>
+                            <div class="item-description">Full redesign with modern, responsive layout. Mobile-first approach optimized for backpackers booking on phones.</div>
+                        </td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">R8,000</td>
+                        <td style="text-align: right;">R8,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Booking System Integration</strong>
+                            <div class="item-description">Direct booking system with payment gateway. Calendar, availability, and pricing management.</div>
+                        </td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">R4,000</td>
+                        <td style="text-align: right;">R4,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>SEO Optimization</strong>
+                            <div class="item-description">On-page SEO, meta tags, schema markup, Google Business optimization for local Cape Town searches.</div>
+                        </td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">R3,000</td>
+                        <td style="text-align: right;">R3,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Brand Assets & Graphics</strong>
+                            <div class="item-description">Logo design, color palette, social media templates, email marketing designs.</div>
+                        </td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">R3,000</td>
+                        <td style="text-align: right;">R3,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Content Migration & Setup</strong>
+                            <div class="item-description">Transfer existing content, write new copy, photography integration, page optimization.</div>
+                        </td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">R2,500</td>
+                        <td style="text-align: right;">R2,500</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Analytics & Training</strong>
+                            <div class="item-description">Google Analytics setup, training session, documentation, 2 weeks post-launch support.</div>
+                        </td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">R2,000</td>
+                        <td style="text-align: right;">R2,000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Rush Delivery (2 Weeks)</strong>
+                            <div class="item-description">Expedited timeline with daily updates and priority scheduling.</div>
+                        </td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">R2,500</td>
+                        <td style="text-align: right;">R2,500</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- TOTALS -->
+            <div class="totals">
+                <div class="totals-row subtotal">
+                    <span>Subtotal:</span>
+                    <span>R25,000</span>
+                </div>
+                <div class="totals-row deposit">
+                    <span>Deposit Already Paid:</span>
+                    <span>-R5,000</span>
+                </div>
+                <div class="totals-row total">
+                    <span>Balance Due:</span>
+                    <span>R20,000</span>
+                </div>
+            </div>
+
+            <!-- PAYMENT OPTIONS -->
+            <div class="payment-options">
+                <h3>Flexible Payment Options</h3>
+                
+                <div class="option">
+                    <h4>Option 1: Trade + Cash</h4>
+                    <div class="option-price">R15,000 cash + R10,000 accommodation credit</div>
+                    <p>Pay R15,000 and receive R10,000 in accommodation credit (6 months of free stays, 12 nights total). Perfect for regular Cape Town visits.</p>
+                </div>
+
+                <div class="option recommended">
+                    <h4>Option 2: Revenue Share Partnership</h4>
+                    <div class="option-price">R10,000 + 5% direct bookings (6 months)</div>
+                    <p>Pay R10,000 upfront and 5% of all direct website bookings for 6 months. Performance-based model where we both benefit from increased conversions.</p>
+                </div>
+
+                <div class="option">
+                    <h4>Option 3: Full Payment Discount</h4>
+                    <div class="option-price">R20,000 (save R5,000)</div>
+                    <p>Pay full balance of R20,000 and receive R5,000 discount off standard R25,000 rate. Clean transaction with no ongoing commitments.</p>
+                </div>
+            </div>
+
+            <!-- TERMS -->
+            <div class="terms">
+                <h3>Terms & Conditions</h3>
+                <ul>
+                    <li>2-week delivery timeline from agreement date</li>
+                    <li>Daily progress updates via email or WhatsApp</li>
+                    <li>2 rounds of revisions included</li>
+                    <li>2 weeks of post-launch support included</li>
+                    <li>All source files and assets transferred upon completion</li>
+                    <li>Website hosted on your domain/hosting of choice</li>
+                    <li>Free mockup and logo assets provided regardless of decision</li>
+                    <li>Invoice valid for 30 days</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; padding: 2rem; background: rgba(30, 202, 211, 0.1); border-radius: 12px; margin-top: 2rem;">
+                <p style="font-size: 1.125rem;"><strong>Questions or want to discuss payment options?</strong></p>
+                <p>Contact Lily at <a href="mailto:lily@carameldigitaldesign.online" style="color: var(--ocean-blue); font-weight: 600;">lily@carameldigitaldesign.online</a></p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="invoice-footer">
+            <p><strong>Caramel Digital Design</strong></p>
+            <p>Cape Town, South Africa | www.carameldigitaldesign.online</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="mailto:lily@carameldigitaldesign.online?subject=Cape%20Capsules%20Invoice%20-%20Ready%20to%20Proceed" class="btn">Accept & Proceed</a>
+                <a href="proposal.html" class="btn btn-secondary">Back to Proposal</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

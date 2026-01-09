@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cape Capsules Digital Upgrade Proposal | Caramel Digital Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Cape Capsules Core Palette */
+            --ocean-blue: #0B5ED7;
+            --deep-sea-blue: #083E8C;
+            --turquoise-surf: #1ECAD3;
+            --hut-yellow: #FFD400;
+            --pure-white: #FFFFFF;
+            --sand-white: #F6F1E6;
+            --navy-ink: #0B1F3B;
+            
+            /* Caramel Lotus Accent */
+            --lotus-purple: #D946EF;
+            --lotus-cyan: #06B6D4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy-ink);
+            color: var(--pure-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.75rem; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* HEADER / HERO */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(180deg, var(--navy-ink) 0%, #0A0A0A 100%);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--lotus-purple), var(--lotus-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: var(--sand-white);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            margin: 2rem 0;
+        }
+
+        .logo-section img {
+            max-width: 150px;
+            height: auto;
+            margin: 0 1rem;
+            filter: drop-shadow(0 4px 12px rgba(217, 70, 239, 0.3));
+        }
+
+        /* SECTION STYLING */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--turquoise-surf);
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+            color: var(--hut-yellow);
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--sand-white);
+            margin-bottom: 1rem;
+        }
+
+        /* APOLOGY SECTION */
+        .apology {
+            background: linear-gradient(180deg, #0A0A0A 0%, var(--navy-ink) 100%);
+            text-align: center;
+        }
+
+        .apology-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--turquoise-surf);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .apology-box p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+
+        /* FREE GIFT SECTION */
+        .free-gift {
+            background: var(--navy-ink);
+        }
+
+        .free-gift h2 span {
+            color: var(--hut-yellow);
+        }
+
+        .gift-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gift-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--ocean-blue);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gift-item:hover {
+            border-color: var(--turquoise-surf);
+            transform: translateY(-4px);
+        }
+
+        .gift-item img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* FULL PACKAGE SECTION */
+        .full-package {
+            background: #0A0A0A;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .package-list {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--ocean-blue);
+        }
+
+        .package-list ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .package-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .package-list li:last-child {
+            border-bottom: none;
+        }
+
+        .package-list li:before {
+            content: "✓";
+            color: var(--turquoise-surf);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .value-box {
+            background: linear-gradient(135deg, rgba(11, 94, 215, 0.2), rgba(30, 202, 211, 0.2));
+            border: 2px solid var(--hut-yellow);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .value-box h4 {
+            font-size: 1.5rem;
+            color: var(--turquoise-surf);
+            margin-bottom: 1rem;
+        }
+
+        .value-box .big-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--hut-yellow), var(--turquoise-surf));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        /* TRADE OPTIONS */
+        .trade-options {
+            background: var(--navy-ink);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--ocean-blue);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover {
+            border-color: var(--turquoise-surf);
+            transform: scale(1.02);
+        }
+
+        .option-card.recommended {
+            border-color: var(--hut-yellow);
+            background: linear-gradient(180deg, rgba(255, 212, 0, 0.1) 0%, rgba(11, 94, 215, 0.1) 100%);
+        }
+
+        .option-card .badge {
+            display: inline-block;
+            background: var(--hut-yellow);
+            color: var(--navy-ink);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--turquoise-surf);
+            margin: 1rem 0;
+        }
+
+        .option-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .option-card li {
+            padding: 0.5rem 0;
+            color: var(--sand-white);
+        }
+
+        .option-card li:before {
+            content: "→ ";
+            color: var(--turquoise-surf);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            background: #0A0A0A;
+        }
+
+        .timeline-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .timeline-step {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--hut-yellow);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .timeline-step h4 {
+            color: var(--turquoise-surf);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-step ul {
+            list-style: none;
+            color: var(--sand-white);
+        }
+
+        .timeline-step li {
+            padding: 0.5rem 0;
+        }
+
+        .timeline-step li:before {
+            content: "• ";
+            color: var(--hut-yellow);
+        }
+
+        /* IMPACT SECTION */
+        .impact {
+            background: var(--navy-ink);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-column {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .impact-column.problems {
+            border: 2px solid #7F1D1D;
+        }
+
+        .impact-column.solutions {
+            border: 2px solid var(--turquoise-surf);
+        }
+
+        .impact-column h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-column.problems h3 {
+            color: #EF4444;
+        }
+
+        .impact-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        .impact-item strong {
+            color: var(--turquoise-surf);
+        }
+
+        /* CTA SECTION */
+        .cta {
+            background: linear-gradient(135deg, rgba(11, 94, 215, 0.3), rgba(30, 202, 211, 0.3));
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--pure-white);
+        }
+
+        .cta p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--pure-white);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+
+        .btn-primary {
+            background: linear-gradient(180deg, var(--hut-yellow) 0%, #FFC107 100%);
+            color: var(--navy-ink);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 212, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--turquoise-surf);
+            color: var(--turquoise-surf);
+        }
+
+        .btn-secondary:hover {
+            background: var(--turquoise-surf);
+            color: var(--navy-ink);
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--navy-ink);
+        }
+
+        .footer p {
+            color: var(--sand-white);
+            font-size: 0.875rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .package-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <p style="font-size: 0.875rem; color: var(--sand-white); margin-bottom: 1rem;">From</p>
+                <p style="font-size: 1.5rem; font-weight: 700; color: var(--lotus-cyan);">Caramel Digital Design</p>
+            </div>
+            <h1>Cape Capsules Digital Upgrade Proposal</h1>
+            <p>Turn an awkward situation into R20,000+ profit in 2 weeks</p>
+        </div>
+    </header>
+
+    <!-- APOLOGY SECTION -->
+    <section class="apology">
+        <div class="container">
+            <h2>First, My Sincere Apology</h2>
+            <div class="apology-box">
+                <p>I completely understand the frustration of being ghosted after a deposit. That's not professional, and you deserved better communication. I apologize for that entirely.</p>
+                <p style="margin-top: 1.5rem;"><strong>Here's what I'm offering to make it right:</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE GIFT SECTION -->
+    <section class="free-gift">
+        <div class="container">
+            <h2>Free Gift: <span>Professional Brand Mockup</span></h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">As an apology and demonstration of what's possible, I've already created a professional website hero mockup for Cape Capsules—completely free, no strings attached.</p>
+            
+            <div class="gift-showcase">
+                <div class="gift-item">
+                    <img src="cape-capsules-website-upgrade-vision.jpg" alt="Cape Capsules Website Hero Mockup">
+                    <h3>High-Fidelity Website Hero</h3>
+                    <p>Shows your brand at its best—sharp, vibrant, and conversion-focused with integrated booking system.</p>
+                </div>
+                <div class="gift-item">
+                    <img src="cape-capsules-logo.jpg" alt="Cape Capsules Logo">
+                    <h3>Professional Logo Design</h3>
+                    <p>Circular badge with surfer girl, ocean waves, and clean typography that captures Muizenberg's surf culture.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(255, 212, 0, 0.1); border-radius: 12px;">
+                <p style="font-size: 1.25rem;"><strong>This mockup + logo is yours to keep</strong>, whether you proceed with the full package or not. Consider it my way of saying sorry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL PACKAGE SECTION -->
+    <section class="full-package">
+        <div class="container">
+            <h2>The Complete Digital Upgrade Package</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Everything your hostel needs to compete in Cape Town's competitive backpacker market.</p>
+            
+            <div class="package-grid">
+                <div class="package-list">
+                    <h3>What's Included</h3>
+                    <ul>
+                        <li>Full website redesign (responsive, fast, modern)</li>
+                        <li>Integrated booking system with payment gateway</li>
+                        <li>Professional photography integration</li>
+                        <li>SEO optimization for Cape Town surf searches</li>
+                        <li>Mobile-first responsive design</li>
+                        <li>Social media graphics package</li>
+                        <li>Google Business optimization</li>
+                        <li>Email marketing templates</li>
+                        <li>Analytics setup & training</li>
+                        <li>2 weeks of post-launch support</li>
+                    </ul>
+                </div>
+
+                <div class="value-box">
+                    <h4>Full Package Value</h4>
+                    <div class="big-number">R25,000</div>
+                    <p>Complete digital transformation delivered in 2 weeks</p>
+                    <div style="margin-top: 2rem; padding: 1rem; background: rgba(0, 0, 0, 0.3); border-radius: 8px;">
+                        <p style="font-size: 1rem;">🎯 <strong>Expected ROI:</strong> 5-10 additional bookings per month = R15,000-30,000 monthly revenue increase</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRADE OPTIONS -->
+    <section class="trade-options">
+        <div class="container">
+            <h2>Flexible Payment Options</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">I understand cash flow can be tight. Here are three ways to move forward:</p>
+
+            <div class="options-grid">
+                <div class="option-card">
+                    <h3>Option 1: Trade + Cash</h3>
+                    <div class="price">R15,000 + Trade</div>
+                    <ul>
+                        <li>R15,000 cash payment</li>
+                        <li>R10,000 in accommodation credit</li>
+                        <li>6 months of free stays (12 nights)</li>
+                        <li>Perfect for my Cape Town visits</li>
+                    </ul>
+                </div>
+
+                <div class="option-card recommended">
+                    <span class="badge">RECOMMENDED</span>
+                    <h3>Option 2: Revenue Share</h3>
+                    <div class="price">R10,000 + 5%</div>
+                    <ul>
+                        <li>R10,000 upfront payment</li>
+                        <li>5% of direct bookings for 6 months</li>
+                        <li>Performance-based partnership</li>
+                        <li>We both win when bookings increase</li>
+                    </ul>
+                </div>
+
+                <div class="option-card">
+                    <h3>Option 3: Full Payment</h3>
+                    <div class="price">R20,000</div>
+                    <ul>
+                        <li>Special rate (R5,000 discount)</li>
+                        <li>All work completed</li>
+                        <li>No ongoing commitments</li>
+                        <li>Clean, simple transaction</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(30, 202, 211, 0.1); border: 2px solid var(--turquoise-surf); border-radius: 12px;">
+                <p style="font-size: 1.25rem;"><strong>Your R5,000 deposit will be credited</strong> toward whichever option you choose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline">
+        <div class="container">
+            <h2>2-Week Delivery Timeline</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Clear milestones with daily communication so you always know where we are.</p>
+
+            <div class="timeline-steps">
+                <div class="timeline-step">
+                    <h4>Week 1: Foundation</h4>
+                    <ul>
+                        <li>Finalize design system</li>
+                        <li>Build core pages</li>
+                        <li>Setup booking integration</li>
+                        <li>Daily progress updates</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-step">
+                    <h4>Week 2: Refinement</h4>
+                    <ul>
+                        <li>Mobile optimization</li>
+                        <li>Content upload</li>
+                        <li>SEO implementation</li>
+                        <li>Testing & launch prep</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-step">
+                    <h4>Launch Day</h4>
+                    <ul>
+                        <li>Go live on your domain</li>
+                        <li>Setup analytics</li>
+                        <li>Training session</li>
+                        <li>Support begins</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-step">
+                    <h4>Post-Launch</h4>
+                    <ul>
+                        <li>2 weeks free support</li>
+                        <li>Performance monitoring</li>
+                        <li>Quick fixes included</li>
+                        <li>Optimization tweaks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT SECTION -->
+    <section class="impact">
+        <div class="container">
+            <h2>The Real Business Impact</h2>
+            
+            <div class="impact-grid">
+                <div class="impact-column problems">
+                    <h3>Current Challenges</h3>
+                    <div class="impact-item">
+                        <strong>Outdated Website:</strong> Current site looks unprofessional, making potential guests bounce to competitors.
+                    </div>
+                    <div class="impact-item">
+                        <strong>No Direct Bookings:</strong> Forced to rely on expensive booking platforms (15-20% commission).
+                    </div>
+                    <div class="impact-item">
+                        <strong>Poor Mobile Experience:</strong> Most backpackers book on mobile, but your site doesn't work well on phones.
+                    </div>
+                    <div class="impact-item">
+                        <strong>Invisible on Google:</strong> Not ranking for key searches like "surf hostel Muizenberg" or "backpackers Cape Town beach."
+                    </div>
+                </div>
+
+                <div class="impact-column solutions">
+                    <h3>After Upgrade</h3>
+                    <div class="impact-item">
+                        <strong>Professional First Impression:</strong> Modern, vibrant design that reflects Muizenberg's surf culture and appeals to your target audience.
+                    </div>
+                    <div class="impact-item">
+                        <strong>Direct Booking Revenue:</strong> Keep 100% of booking fees with integrated payment system. Save R3,000-6,000 per month in commissions.
+                    </div>
+                    <div class="impact-item">
+                        <strong>Mobile-First Design:</strong> Perfect experience on all devices means more conversions from mobile browsers.
+                    </div>
+                    <div class="impact-item">
+                        <strong>SEO Visibility:</strong> Optimized to rank for high-intent searches. Appear when backpackers search for surf hostels.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta">
+        <div class="container">
+            <h2>Let's Make This Right</h2>
+            <p>I'm committed to delivering excellent work and rebuilding trust. The free mockup and logo are yours regardless.</p>
+            
+            <div class="cta-buttons">
+                <a href="mailto:lily@carameldigitaldesign.online?subject=Cape%20Capsules%20Proposal%20-%20Let's%20Proceed" class="btn btn-primary">Let's Talk - I'm Interested</a>
+                <a href="invoice.html" class="btn btn-secondary">View Detailed Invoice</a>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(0, 0, 0, 0.3); border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1rem;">📞 <strong>Contact:</strong> lily@carameldigitaldesign.online<br>
+                🌐 <strong>Portfolio:</strong> www.carameldigitaldesign.online</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Caramel Digital Design | Cape Town, South Africa</p>
+            <p>This proposal is valid for 30 days from date of presentation.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
