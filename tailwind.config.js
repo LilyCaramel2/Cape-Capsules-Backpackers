@@ -7,14 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'ocean-blue': '#0B5ED7',
-        'deep-sea-blue': '#083E8C',
-        'turquoise-surf': '#1ECAD3',
-        'hut-yellow': '#FFD400',
-        'navy-ink': '#0B1F3B',
-        'sand-white': '#F6F1E6',
-        'pure-white': '#FFFFFF',
-        'island-red': '#E63946',
+        // LOCKED BRAND TOKENS - USE ONLY THESE 4
+        'brand-blue': '#0B5ED7',      // Links ONLY, never backgrounds
+        'brand-yellow': '#FFC928',     // ALL buttons & highlights
+        'brand-red': '#C1121F',        // Header, footer, badges
+        'brand-sand': '#F6F1E6',       // Body background, all sections
       },
       fontFamily: {
         'sans': ['Poppins', 'system-ui', 'sans-serif'],
