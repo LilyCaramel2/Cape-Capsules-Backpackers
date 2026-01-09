@@ -2,30 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cape Capsules Global Styles - LOCKED */
-
 @layer base {
-  * {
-    @apply antialiased;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
   body {
-    @apply font-inter text-navy-ink;
-    @apply text-base leading-relaxed;
+    @apply font-body text-navy-ink bg-pure-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
   }
 }
 
 @layer utilities {
-  /* Text Shadow for Hero Text (LOCKED) */
-  .text-shadow-hero {
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  .gradient-button {
+    background: linear-gradient(135deg, #0B5ED7 0%, #1ECAD3 100%);
   }
   
-  .text-shadow-cta {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  .gradient-overlay {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 100%);
   }
 }

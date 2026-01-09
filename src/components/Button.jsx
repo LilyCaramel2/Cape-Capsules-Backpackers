@@ -1,55 +1,23 @@
-import React from 'react'
+import React from 'react';
 
-/**
- * Cape Capsules Button Component - LOCKED VARIANTS
- * 
- * Variants:
- * - primary: Ocean blue gradient (THE ONLY gradient allowed on buttons)
- * - secondary: Transparent with ocean blue border
- * - urgent: Hut yellow background (for Book Now CTAs only)
- */
-
-function Button({ 
-  children, 
-  variant = 'primary', 
-  className = '', 
-  onClick,
-  href,
-  ...props 
-}) {
-  const baseStyles = 'inline-flex items-center justify-center px-8 py-4 rounded-button font-poppins font-semibold text-base transition-all duration-300 ease-in-out'
+const Button = ({ variant = 'primary', children, className = '', ...props }) => {
+  const baseStyles = 'px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-block text-center';
   
-  const variantStyles = {
-    primary: 'bg-primary-button text-pure-white hover:shadow-button-hover hover:-translate-y-0.5 shadow-button',
-    secondary: 'bg-transparent border-2 border-ocean-blue text-ocean-blue hover:bg-ocean-blue hover:text-pure-white',
-    urgent: 'bg-hut-yellow text-navy-ink font-bold hover:bg-yellow-400 hover:shadow-button-hover shadow-button'
-  }
+  const variants = {
+    primary: 'gradient-button text-white hover:shadow-lg hover:scale-105',
+    secondary: 'border-2 border-ocean-blue text-ocean-blue bg-transparent hover:bg-ocean-blue hover:text-white',
+    urgent: 'bg-hut-yellow text-navy-ink hover:bg-opacity-90 hover:shadow-lg',
+    turquoise: 'border-2 border-turquoise-surf text-turquoise-surf bg-transparent hover:bg-turquoise-surf hover:text-white',
+  };
   
-  const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`
-  
-  // If href provided, render as link
-  if (href) {
-    return (
-      <a 
-        href={href} 
-        className={combinedClassName}
-        {...props}
-      >
-        {children}
-      </a>
-    )
-  }
-  
-  // Otherwise render as button
   return (
     <button 
-      className={combinedClassName}
-      onClick={onClick}
+      className={`${baseStyles} ${variants[variant]} ${className}`}
       {...props}
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
