@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cape Capsules Digital Strategy Proposal | Caramel Digital Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            background: linear-gradient(135deg, #040923 0%, #4776e0 100%);
+            color: #F5F7FF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-section img {
+            height: 80px;
+            width: auto;
+            filter: drop-shadow(0 4px 12px rgba(235, 96, 251, 0.3));
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(235, 96, 251, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #62e0dd;
+            font-weight: 500;
+        }
+
+        /* Invoice Details */
+        .invoice-header {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(235, 96, 251, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .invoice-info h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #eb60fb;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .invoice-info p {
+            color: #F5F7FF;
+            margin-bottom: 0.3rem;
+        }
+
+        .invoice-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 80%;
+            background: linear-gradient(180deg, #eb60fb 0%, #62e0dd 100%);
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            font-size: 1.5rem;
+            color: #62e0dd;
+            margin-bottom: 1rem;
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .problem-item {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .problem-item::before {
+            content: '❌';
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Solution Cards */
+        .solution-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(98, 224, 221, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            border-color: #62e0dd;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(98, 224, 221, 0.2);
+        }
+
+        .solution-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #eb60fb 0%, #62e0dd 100%);
+            color: #040923;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .solution-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .solution-card li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .solution-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #62e0dd;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Stats Box */
+        .stats-box {
+            background: linear-gradient(135deg, rgba(235, 96, 251, 0.1) 0%, rgba(98, 224, 221, 0.1) 100%);
+            border: 2px solid #eb60fb;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #FFFFFF;
+        }
+
+        .stat-label {
+            color: #F5F7FF;
+        }
+
+        .stat-value {
+            color: #62e0dd;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Pricing Tiers */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tier-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(235, 96, 251, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tier-card.featured {
+            border-color: #eb60fb;
+            background: rgba(235, 96, 251, 0.1);
+            transform: scale(1.05);
+        }
+
+        .tier-card:hover {
+            transform: translateY(-8px);
+            border-color: #62e0dd;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            background: #eb60fb;
+            color: #040923;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .tier-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 1rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .tier-features {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .tier-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .tier-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #62e0dd;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #eb60fb 0%, #62e0dd 100%);
+            color: #040923;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(235, 96, 251, 0.4);
+        }
+
+        /* Trade Deal Box */
+        .trade-deal {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.15) 0%, rgba(52, 211, 153, 0.15) 100%);
+            border: 2px solid #2ecc71;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .trade-deal h3 {
+            color: #2ecc71;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: #b3b4ea;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #62e0dd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #eb60fb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .invoice-header {
+                grid-template-columns: 1fr;
+            }
+
+            .tier-card.featured {
+                transform: scale(1);
+            }
+
+            .logo-section img {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-section">
+                <img src="https://raw.githubusercontent.com/LilyCaramel2/Cape-Capsules-Backpackers/main/assets/brand/cape-capsules-logo.jpg" alt="Cape Capsules Logo">
+            </div>
+            <h1>Digital Strategy Proposal</h1>
+            <p class="tagline">Caramel Aura - Glowing Up Your Site</p>
+        </header>
+
+        <!-- Invoice Details -->
+        <div class="invoice-header">
+            <div class="invoice-info">
+                <h3>Prepared For:</h3>
+                <p><strong>Cape Capsules Backpackers</strong></p>
+                <p>Muizenberg Beach</p>
+                <p>Cape Town, Western Cape</p>
+            </div>
+            <div class="invoice-info">
+                <h3>Prepared By:</h3>
+                <p><strong>Lily Godden</strong></p>
+                <p>Caramel Digital Design</p>
+                <p>📧 carameldigitaldesign@gmail.com</p>
+                <p>📱 076 612 5035</p>
+                <p>📍 3 Verwood Road, Lakeside Heights, 7945</p>
+                <p class="invoice-number">CC-001</p>
+            </div>
+        </div>
+
+        <!-- Problem Section -->
+        <section>
+            <h2>The Problem: You're Losing Money</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div>
+                        <strong>R9,600-18,000/year</strong><br>
+                        Paying for NightsBridge subscription
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div>
+                        <strong>Overpriced packages</strong><br>
+                        Weekend at R998/night vs R380 nightly
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div>
+                        <strong>Zero SEO visibility</strong><br>
+                        Not ranking for "cannabis hostel"
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div>
+                        <strong>No 420 marketing</strong><br>
+                        Missing R200k+ tourism market
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div>
+                        <strong>Deposit confusion</strong><br>
+                        R500 vs R1000 discrepancy
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div>
+                        <strong>Manual bookings</strong><br>
+                        No WhatsApp optimization
+                    </div>
+                </div>
+            </div>
+            <div class="stats-box" style="margin-top: 2rem;">
+                <h3 style="color: #FFFFFF; text-align: center; margin-bottom: 1rem;">Total Annual Loss</h3>
+                <p style="text-align: center; font-size: 2.5rem; font-weight: 700; color: #eb60fb; font-family: 'Space Grotesk', sans-serif;">~R30,000+</p>
+            </div>
+        </section>
+
+        <!-- Solutions -->
+        <section>
+            <h2>The Lily System: 4 Strategic Fixes</h2>
+
+            <!-- Solution 1 -->
+            <div class="solution-card">
+                <span class="solution-number">1️⃣ Ditch NightsBridge</span>
+                <h3>Save R9,600/Year Immediately</h3>
+                <p><strong>OLD:</strong> Pay R800/month whether you get bookings or not</p>
+                <p><strong>NEW:</strong> Free WhatsApp + Google Forms booking system</p>
+                <ul>
+                    <li>Direct bookings via WhatsApp (instant response)</li>
+                    <li>Google Calendar availability (real-time)</li>
+                    <li>Payment links when needed (2.9% only on actual bookings)</li>
+                    <li>You keep all guest data + personal relationship</li>
+                </ul>
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <span class="stat-label">Annual Savings:</span>
+                        <span class="stat-value">+R9,600</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 2 -->
+            <div class="solution-card">
+                <span class="solution-number">2️⃣ Fix Your Prices</span>
+                <h3>Make Packages Actually Attractive</h3>
+                <p><strong>CURRENT PROBLEM:</strong> Your packages are TOO EXPENSIVE</p>
+                <ul>
+                    <li>Weekend (3 nights): R2,995 = R998/night 😱</li>
+                    <li>Week (7 nights): R4,995 = R713/night</li>
+                    <li>Nightly: R380</li>
+                    <li><strong>→ Why would anyone buy a package?!</strong></li>
+                </ul>
+                <p style="margin-top: 1.5rem;"><strong>LILY'S PRICING STRATEGY:</strong></p>
+                <ul>
+                    <li>Nightly: R380 (unchanged - good anchor)</li>
+                    <li>Weekend (Fri-Sun): R950 (R316/night - 17% discount)</li>
+                    <li>Week (7 nights): R2,400 (R343/night - 10% discount + perks)</li>
+                </ul>
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <span class="stat-label">Result:</span>
+                        <span class="stat-value">Packages now CHEAPER than nightly</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Income Increase:</span>
+                        <span class="stat-value">+40% more package bookings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Estimated Annual Revenue:</span>
+                        <span class="stat-value">+R45,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 3 -->
+            <div class="solution-card">
+                <span class="solution-number">3️⃣ Add 420 Packages</span>
+                <h3>Tap R50k+/Month Market</h3>
+                <p>Cape Town cannabis tourism is <strong>EXPLODING</strong>. Competitors ignore it - you capitalize.</p>
+                <p style="margin-top: 1rem;"><strong>NEW OFFERING:</strong></p>
+                <ul>
+                    <li>"420-Friendly Surf Weekend" - R1,100</li>
+                    <li>"Cannabis & Kite Week" - R2,650</li>
+                    <li>"Digital Nomad 420 Month" - R8,500</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Include in packages:</strong></p>
+                <ul>
+                    <li>Designated smoking areas highlighted</li>
+                    <li>Local dispensary map</li>
+                    <li>Cannabis-friendly surf crew connections</li>
+                    <li>"420 Welcome Kit" (papers, lighter, local strain guide)</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>SEO STRATEGY - Rank #1 for:</strong></p>
+                <ul>
+                    <li>"cannabis friendly hostel Cape Town"</li>
+                    <li>"420 backpackers Muizenberg"</li>
+                    <li>"weed friendly accommodation Cape Town"</li>
+                </ul>
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <span class="stat-label">Conservative Estimate:</span>
+                        <span class="stat-value">+15 bookings/month @ R1,100</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Monthly New Revenue:</span>
+                        <span class="stat-value">+R16,500/month</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Annual New Revenue:</span>
+                        <span class="stat-value">+R198,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 4 -->
+            <div class="solution-card">
+                <span class="solution-number">4️⃣ SEO Domination</span>
+                <h3>Get Found by Your Customers</h3>
+                <p><strong>CURRENT:</strong> You're invisible on Google for key terms</p>
+                <p><strong>NEW:</strong> Dominate local search</p>
+                <p style="margin-top: 1rem;"><strong>ACTIONS:</strong></p>
+                <ul>
+                    <li>Google Business Profile optimized (photos, posts, offers)</li>
+                    <li>Local SEO: "Muizenberg hostel", "surf backpackers"</li>
+                    <li>International SEO: "Cape Town cannabis hostel", "420 surf trip"</li>
+                    <li>Content strategy: Blog posts about Muizenberg surf + 420 culture</li>
+                </ul>
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <span class="stat-label">Result:</span>
+                        <span class="stat-value">Page 5 → Page 1 in 60-90 days</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Traffic Increase:</span>
+                        <span class="stat-value">+300-500% more visitors</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Booking Increase:</span>
+                        <span class="stat-value">+30 bookings/month</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Annual New Revenue:</span>
+                        <span class="stat-value">+R136,800</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Total Impact -->
+        <section>
+            <h2>Total First-Year Impact</h2>
+            <div class="stats-box">
+                <div class="stat-item">
+                    <span class="stat-label">❌ Ditch NightsBridge</span>
+                    <span class="stat-value">+R9,600 saved</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">💸 Fix Package Prices</span>
+                    <span class="stat-value">+R45,000</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">🌿 420 Packages</span>
+                    <span class="stat-value">+R198,000</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">🔍 SEO Domination</span>
+                    <span class="stat-value">+R136,800</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">TOTAL FIRST-YEAR IMPACT</span>
+                    <span class="stat-value" style="font-size: 1.5rem; color: #62e0dd;">+R389,400</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trade Deal -->
+        <section>
+            <h2>The Trade Deal</h2>
+            <div class="trade-deal">
+                <h3>🤝 What I Need: Safe Accommodation While I Work</h3>
+                <p style="margin: 1rem 0;"><strong>What You Get TODAY (no payment required):</strong></p>
+                <ul style="list-style: none;">
+                    <li style="padding: 0.5rem 0;">✓ Logo pack (3 formats, ready to use)</li>
+                    <li style="padding: 0.5rem 0;">✓ Business cards designed (send to printer)</li>
+                    <li style="padding: 0.5rem 0;">✓ Letterhead template</li>
+                    <li style="padding: 0.5rem 0;">✓ Google Business optimized</li>
+                    <li style="padding: 0.5rem 0;">✓ Website demo showing new strategy</li>
+                </ul>
+                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem;">
+                    <p><strong>This is worth R8,500</strong> in exchange for:</p>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li>• 9 days capsule accommodation (value: R3,420)</li>
+                        <li>• Access to WiFi for work</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 700; color: #2ecc71;">You're AHEAD by R5,080 immediately.</p>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 1.1rem;">Then we discuss continued service if you want the full website + SEO strategy.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Options -->
+        <section>
+            <h2>Investment Options</h2>
+            <p style="margin-bottom: 2rem; color: #b3b4ea;">Choose the package that fits your budget and growth goals:</p>
+            
+            <div class="tier-grid">
+                <!-- Tier 1 -->
+                <div class="tier-card">
+                    <h3 style="color: #FFFFFF;">Survival Package</h3>
+                    <div class="tier-price">R5,000</div>
+                    <p style="color: #b3b4ea; margin-bottom: 1.5rem;">Once-off</p>
+                    <ul class="tier-features">
+                        <li>New website with correct pricing</li>
+                        <li>WhatsApp booking system setup</li>
+                        <li>Google Business optimization</li>
+                        <li>Logo pack + brand assets</li>
+                        <li>1 month support/training</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #62e0dd;"><strong>Result:</strong> Stop bleeding money immediately</p>
+                    <a href="tel:0766125035" class="cta-button">Let's Talk</a>
+                </div>
+
+                <!-- Tier 2 (Featured) -->
+                <div class="tier-card featured">
+                    <span class="tier-badge">🔥 RECOMMENDED</span>
+                    <h3 style="color: #FFFFFF;">Growth Package</h3>
+                    <div class="tier-price">R12,000</div>
+                    <p style="color: #b3b4ea; margin-bottom: 1.5rem;">R4,000 x 3 months</p>
+                    <ul class="tier-features">
+                        <li><strong>Everything in Survival PLUS:</strong></li>
+                        <li>420 section + packages created</li>
+                        <li>Local SEO setup + 3 months management</li>
+                        <li>Social media optimization</li>
+                        <li>Monthly content (blog posts + social)</li>
+                        <li>Booking funnel optimization</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #62e0dd;"><strong>Result:</strong> Start making serious money</p>
+                    <a href="https://wa.me/27766125035?text=Hi%20Lily!%20I'm%20interested%20in%20the%20Growth%20Package%20for%20Cape%20Capsules" class="cta-button">Book via WhatsApp</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="tier-card">
+                    <h3 style="color: #FFFFFF;">Domination Package</h3>
+                    <div class="tier-price">R25,000</div>
+                    <p style="color: #b3b4ea; margin-bottom: 1.5rem;">R5,000 x 5 months</p>
+                    <ul class="tier-features">
+                        <li><strong>Everything in Growth PLUS:</strong></li>
+                        <li>International SEO targeting</li>
+                        <li>Paid ads setup (Google + Meta)</li>
+                        <li>Email marketing automation</li>
+                        <li>Reputation management</li>
+                        <li>Quarterly strategy reviews</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #62e0dd;"><strong>Result:</strong> Become #1 hostel in Muizenberg</p>
+                    <a href="mailto:carameldigitaldesign@gmail.com" class="cta-button">Email Me</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 1rem;">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Your Investment (Tier 2):</strong> R12,000</p>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Your Return:</strong> R389,400 first year</p>
+                <p style="font-size: 1.5rem; font-weight: 700; color: #62e0dd; font-family: 'Space Grotesk', sans-serif;">ROI: 3,145% in Year 1</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Lily Godden</strong> | Caramel Digital Design</p>
+            <p>📧 <a href="mailto:carameldigitaldesign@gmail.com">carameldigitaldesign@gmail.com</a></p>
+            <p>📱 <a href="tel:0766125035">076 612 5035</a></p>
+            <p>📍 3 Verwood Road, Lakeside Heights, 7945</p>
+            <p style="margin-top: 2rem; font-size: 0.85rem;">Invoice: <strong>CC-001</strong> | Date: January 9, 2026</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #62e0dd;">Caramel Aura - Glowing Up Your Site ✨</p>
+        </footer>
+    </div>
+</body>
+</html>
