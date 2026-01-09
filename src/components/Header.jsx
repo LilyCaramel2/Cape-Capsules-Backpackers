@@ -1,41 +1,72 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Header = () => {
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const menuItems = [
+    { label: 'Home', href: '#home' },
+    { label: 'Capsules & Pricing', href: '#pricing' },
+    { label: 'Amenities', href: '#amenities' },
+    { label: 'Location', href: '#location' },
+    { label: 'Gallery', href: '#gallery' },
+    { label: 'FAQ', href: '#faq' },
+    { label: 'Contact', href: '#booking' },
+  ];
 
   return (
-    <header className="bg-brand-red text-white sticky top-0 z-50 shadow-lg">
-      <div className="max-w-5xl mx-auto px-4 py-4">
-        {/* Desktop: Logo left, inline menu right */}
-        <div className="hidden md:flex justify-between items-center">
-          <h3 className="text-white m-0">Cape Capsules</h3>
-          <nav className="flex items-center gap-6">
-            <button onClick={() => scrollToSection('home')} className="hover:underline">Home</button>
-            <button onClick={() => scrollToSection('pricing')} className="hover:underline">Capsules & Pricing</button>
-            <button onClick={() => scrollToSection('amenities')} className="hover:underline">Amenities</button>
-            <button onClick={() => scrollToSection('location')} className="hover:underline">Location</button>
-            <button onClick={() => scrollToSection('gallery')} className="hover:underline">Gallery</button>
-            <button onClick={() => scrollToSection('faq')} className="hover:underline">FAQ</button>
-            <button onClick={() => scrollToSection('booking')} className="hover:underline">Contact</button>
-          </nav>
-        </div>
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'shadow-lg py-2' : 'py-4'
+      } gradient-header`}
+    >
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between">
+          
+          {/* Logo */}
+          <a href="#home" className="flex items-center gap-3 animate-float">
+            <img 
+              src="/brand/cape-capsules-logo.jpg" 
+              alt="Cape Capsules Logo" 
+              className="h-16 w-16 md:h-20 md:w-20 rounded-full border-2 border-white shadow-xl hover:scale-110 transition-transform duration-300"
+            />
+            <div className="hidden md:block">
+              <h3 className="text-white font-black text-xl leading-tight">Cape Capsules</h3>
+              <p className="text-white text-xs opacity-90">Muizenberg Beach</p>
+            </div>
+          </a>
 
-        {/* Mobile: Logo stacked, horizontal scroll menu */}
-        <div className="md:hidden">
-          <h3 className="text-white text-center mb-3">Cape Capsules</h3>
-          <nav className="flex overflow-x-auto whitespace-nowrap gap-3 -mx-4 px-4">
-            <button onClick={() => scrollToSection('home')} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30">Home</button>
-            <button onClick={() => scrollToSection('pricing')} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30">Pricing</button>
-            <button onClick={() => scrollToSection('amenities')} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30">Amenities</button>
-            <button onClick={() => scrollToSection('location')} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30">Location</button>
-            <button onClick={() => scrollToSection('gallery')} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30">Gallery</button>
-            <button onClick={() => scrollToSection('faq')} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30">FAQ</button>
-            <button onClick={() => scrollToSection('booking')} className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm hover:bg-opacity-30">Contact</button>
+          {/* Desktop Menu */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-white hover:text-hut-yellow transition-colors duration-300 font-medium text-sm"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Mobile Menu - Horizontal Scroll */}
+          <nav className="lg:hidden flex overflow-x-auto gap-3 scrollbar-hide">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-white hover:bg-white hover:text-island-red px-3 py-1 rounded-full whitespace-nowrap text-xs transition-all duration-300"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
         </div>
       </div>
