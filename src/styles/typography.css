@@ -1,0 +1,44 @@
+/* Cape Capsules Typography System - LOCKED */
+
+/* Headings: Poppins 700 */
+h1, .h1 {
+  @apply font-poppins font-bold;
+  @apply text-[3.5rem] leading-tight;
+}
+
+h2, .h2 {
+  @apply font-poppins font-bold;
+  @apply text-[2.5rem] leading-tight;
+}
+
+h3, .h3 {
+  @apply font-poppins font-bold;
+  @apply text-[1.75rem] leading-snug;
+}
+
+/* Body: Inter 400 */
+body, p, .body-text {
+  @apply font-inter font-normal;
+  @apply text-base leading-relaxed;
+}
+
+/* Button Text: Poppins 600 */
+button, .btn {
+  @apply font-poppins font-semibold;
+  @apply text-base;
+}
+
+/* Mobile Responsive Typography */
+@media (max-width: 768px) {
+  h1, .h1 {
+    @apply text-[2.5rem];
+  }
+  
+  h2, .h2 {
+    @apply text-[2rem];
+  }
+  
+  h3, .h3 {
+    @apply text-[1.5rem];
+  }
+}

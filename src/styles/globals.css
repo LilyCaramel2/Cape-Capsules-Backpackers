@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cape Capsules Global Styles - LOCKED */
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-inter text-navy-ink;
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* Text Shadow for Hero Text (LOCKED) */
+  .text-shadow-hero {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow-cta {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+}
