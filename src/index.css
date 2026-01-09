@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body bg-sand-white text-navy-ink;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  /* H1: Hero only */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-black tracking-tight;
+  }
+  
+  /* H2: Section titles */
+  h2 {
+    @apply text-2xl md:text-3xl font-bold mb-4;
+  }
+  
+  /* H3: Card titles */
+  h3 {
+    @apply text-lg md:text-xl font-semibold mb-2;
+  }
+  
+  /* Body text */
+  p, li {
+    @apply text-sm md:text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Unified button style - Hut Yellow everywhere */
+  .btn-primary {
+    @apply bg-hut-yellow text-navy-ink px-6 py-3 rounded-full font-bold;
+    @apply hover:shadow-lg hover:scale-105 transition-all duration-300;
+    @apply w-full md:w-auto;
+  }
+  
+  /* Section container with max-width and padding */
+  .section-container {
+    @apply max-w-5xl mx-auto px-4 py-20;
+  }
+  
+  /* Gradient header animation */
+  .gradient-header {
+    @apply bg-gradient-to-r from-island-red via-island-red to-deep-sea-blue;
+    @apply animate-gradient-x;
+    background-size: 200% 200%;
+  }
+}
