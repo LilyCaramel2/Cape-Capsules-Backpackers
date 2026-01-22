@@ -1,53 +1,34 @@
 import React from 'react';
-import Button from '../components/Button';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-sand-white">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(/images/hero-placeholder.svg)',
-          backgroundColor: '#E8DCC4'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
-      </div>
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-dark-bg">
+      {/* Abstract Background Glows */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-pink/20 rounded-full blur-[128px] -z-10 animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-neon-cyan/20 rounded-full blur-[128px] -z-10 animate-pulse delay-700"></div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center text-white">
-        <h1 className="mb-6 drop-shadow-lg">
-          Sleep Steps From The Waves
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+          Digital Presence <br/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan animate-gradient-x drop-shadow-[0_0_10px_rgba(255,0,255,0.5)]">
+            Electrified
+          </span>
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md">
-          Private beach capsules in Muizenberg from R380/night
+
+        <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+          We build high-performance, neon-soaked digital experiences that capture your brand's unique energy.
+          Web Development, SaaS, and Thought Leadership platforms with a futuristic edge.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>
-            Check Availability
-          </Button>
-          <Button onClick={() => window.open('https://wa.me/27824131499?text=Hi!%20I\'d%20like%20to%20book%20a%20capsule', '_blank')}>
-            WhatsApp Us
-          </Button>
-        </div>
-
-        {/* Trust Badges - NO EMOJIS */}
-        <div className="flex flex-wrap justify-center gap-4 text-sm">
-          <div className="bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-            4.4/5 on Google Reviews
-          </div>
-          <div className="bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-            Beachfront in Muizenberg
-          </div>
-          <div className="bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-            Solar Power & Fast WiFi
-          </div>
-          <div className="bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-            420-Friendly Accommodation
-          </div>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-black bg-gradient-to-r from-neon-pink to-neon-purple hover:to-neon-pink transition-all shadow-neon-pink hover:shadow-[0_0_30px_rgba(255,0,255,0.6)]">
+            Start Your Build
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
+          <a href="#portfolio" className="inline-flex items-center justify-center px-8 py-3 border border-neon-cyan text-base font-bold rounded-md text-neon-cyan bg-transparent hover:bg-neon-cyan/10 transition-colors shadow-neon-cyan hover:shadow-[0_0_20px_rgba(0,255,255,0.4)]">
+            View Portfolio
+          </a>
         </div>
       </div>
     </section>

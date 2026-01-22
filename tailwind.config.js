@@ -7,46 +7,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        // REAL Cape Capsules Palette from logo/brand guidelines
-        'ocean-blue': '#0B5ED7',      // Primary blue (links only)
-        'deep-sea-blue': '#083E8C',   // Navy accent
-        'turquoise-surf': '#1ECAD3',  // Bright turquoise accent
-        'hut-yellow': '#FFD400',      // Beach hut yellow (all buttons)
-        'island-red': '#E63946',      // Vibrant red (header/footer/badges)
-        'sand-white': '#F6F1E6',      // Warm sand background
-        'pure-white': '#FFFFFF',      // Clean white
-        'navy-ink': '#0B1F3B',        // Dark navy for text
+        neon: {
+          pink: '#FF00FF',
+          cyan: '#00FFFF',
+          gold: '#FFD700',
+          purple: '#BC13FE',
+        },
+        dark: {
+          bg: '#050505',
+          card: '#121212',
+          border: '#333333',
+        }
       },
       fontFamily: {
-        heading: ['Poppins', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
       },
-      animation: {
-        'gradient-x': 'gradient-x 8s ease infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'wave': 'wave 3s ease-in-out infinite',
+      boxShadow: {
+        'neon-pink': '0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5)',
+        'neon-cyan': '0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5)',
+        'neon-gold': '0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.5)',
       },
-      keyframes: {
-        'gradient-x': {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          },
-        },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        'wave': {
-          '0%, 100%': { transform: 'rotate(0deg)' },
-          '25%': { transform: 'rotate(5deg)' },
-          '75%': { transform: 'rotate(-5deg)' },
-        },
-      },
+      backgroundImage: {
+        'gradient-neon': 'linear-gradient(to right, #FF00FF, #00FFFF)',
+      }
     },
   },
   plugins: [],
