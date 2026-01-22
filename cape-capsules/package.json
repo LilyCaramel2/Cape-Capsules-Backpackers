@@ -1,8 +1,7 @@
 {
-  "name": "caramel-digital-site",
+  "name": "cape-capsules-backpackers",
   "private": true,
   "version": "1.0.0",
-  "homepage": ".",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lucide-react": "^0.309.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

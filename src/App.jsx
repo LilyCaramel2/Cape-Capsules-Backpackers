@@ -1,33 +1,24 @@
 import React from 'react';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './sections/Hero';
-import ValueProps from './sections/ValueProps';
-import Pricing from './sections/Pricing';
-import Cannabis420 from './sections/Cannabis420';
-import Amenities from './sections/Amenities';
-import Gallery from './sections/Gallery';
-import Reviews from './sections/Reviews';
-import Location from './sections/Location';
-import Booking from './sections/Booking';
-import FAQ from './sections/FAQ';
-import './styles/globals.css';
+import Services from './sections/Services';
+import Portfolio from './sections/Portfolio';
+import About from './sections/About';
+import Testimonials from './sections/Testimonials';
+import Contact from './sections/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <div className="font-sans antialiased text-white bg-dark-bg min-h-screen">
+      <Navbar />
       <main>
         <Hero />
-        <ValueProps />
-        <Pricing />
-        <Cannabis420 />
-        <Amenities />
-        <Gallery />
-        <Reviews />
-        <Location />
-        <Booking />
-        <FAQ />
+        <Services />
+        <About />
+        <Portfolio />
+        <Testimonials />
+        <Contact />
       </main>
       <Footer />
     </div>

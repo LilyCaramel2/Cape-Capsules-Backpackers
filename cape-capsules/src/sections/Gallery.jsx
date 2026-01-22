@@ -3,14 +3,14 @@ import Button from '../components/Button';
 
 const Gallery = () => {
   const images = [
-    { src: '/images/gallery-1.jpg', alt: 'Capsule interior with privacy curtain' },
-    { src: '/images/gallery-2.jpg', alt: 'Beachfront view from balcony' },
-    { src: '/images/gallery-3.jpg', alt: 'Communal kitchen' },
-    { src: '/images/gallery-4.jpg', alt: 'Cowork space / library' },
-    { src: '/images/gallery-5.jpg', alt: 'Rooftop deck with ocean view' },
-    { src: '/images/gallery-6.jpg', alt: 'Beach huts across the road' },
-    { src: '/images/gallery-7.jpg', alt: 'Common lounge area' },
-    { src: '/images/gallery-8.jpg', alt: 'Surfers on Muizenberg Beach' },
+    { src: '/images/gallery-1.svg', alt: 'Capsule interior with privacy curtain' },
+    { src: '/images/gallery-2.svg', alt: 'Beachfront view from balcony' },
+    { src: '/images/gallery-3.svg', alt: 'Communal kitchen' },
+    { src: '/images/gallery-4.svg', alt: 'Cowork space / library' },
+    { src: '/images/gallery-5.svg', alt: 'Rooftop deck with ocean view' },
+    { src: '/images/gallery-6.svg', alt: 'Beach huts across the road' },
+    { src: '/images/gallery-7.svg', alt: 'Common lounge area' },
+    { src: '/images/gallery-8.svg', alt: 'Surfers on Muizenberg Beach' },
   ];
 
   return (

@@ -1,0 +1,23 @@
+{
+  "colors": {
+    "background": "#050505",
+    "surface": "#121212",
+    "primary": {
+      "pink": "#FF0080",
+      "cyan": "#00FFFF",
+      "gradient": "linear-gradient(to right, #FF0080, #00FFFF)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA"
+    }
+  },
+  "fonts": {
+    "heading": "Inter, sans-serif",
+    "body": "Inter, sans-serif"
+  },
+  "layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "navbarHeight": "80px"
+  }
+}

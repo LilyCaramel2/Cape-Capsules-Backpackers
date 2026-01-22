@@ -3,7 +3,7 @@ import Button from '../components/Button';
 
 const Cannabis420 = () => {
   return (
-    <section id="cannabis" className="section-container bg-brand-sand">
+    <section id="cannabis" className="section-container bg-sand-white">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-center mb-8">Cannabis-Friendly Accommodation</h2>
         
@@ -17,7 +17,7 @@ const Cannabis420 = () => {
           </p>
         </div>
 
-        <div className="bg-brand-yellow bg-opacity-20 border-2 border-brand-yellow rounded-lg p-6 mb-8">
+        <div className="bg-hut-yellow bg-opacity-20 border-2 border-hut-yellow rounded-lg p-6 mb-8">
           <h3 className="mb-4">Our Policy</h3>
           <ul className="space-y-2">
             <li>Outdoor areas only (garden, balcony, rooftop)</li>
