@@ -51,7 +51,7 @@ const Portfolio = () => {
             description="A high-performance beauty salon site. Features WhatsApp booking, optimized imagery, and local SEO. Note: Design reflects client brand (Peach/Soft), not Caramel Digital's neon aura."
             image="/halo-glow-site/assets/images/haloglow-hero.webp"
             liveLink="/halo-glow-site/"
-            repoLink="https://github.com/LilyCaramel2/caramel-digital-site/tree/main/halo-glow-site"
+            repoLink="https://github.com/LilyCaramel2/caramel-digital-site/tree/main/public/halo-glow-site"
           />
           <ProjectCard
             title="Cape Capsules Backpackers"

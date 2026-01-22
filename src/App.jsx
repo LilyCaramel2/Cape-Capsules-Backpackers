@@ -10,7 +10,7 @@ import Contact from './sections/Contact';
 
 function App() {
   return (
-    <div className="font-sans antialiased text-gray-900 bg-white">
+    <div className="font-sans antialiased text-white bg-dark-bg min-h-screen">
       <Navbar />
       <main>
         <Hero />
