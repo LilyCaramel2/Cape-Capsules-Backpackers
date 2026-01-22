@@ -3,12 +3,12 @@ import Button from '../components/Button';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-brand-sand">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-sand-white">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(/images/hero-placeholder.jpg)',
+          backgroundImage: 'url(/images/hero-placeholder.svg)',
           backgroundColor: '#E8DCC4'
         }}
       >

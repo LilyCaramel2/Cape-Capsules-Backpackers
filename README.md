@@ -144,14 +144,15 @@ Cape-Capsules-Backpackers/
 │   │   └── Footer.jsx    # ✅ COMPLETE - 4 columns, R500 deposit note
 │   ├── sections/
 │   │   ├── Hero.jsx          # ✅ COMPLETE - Girl surfer logo, gradient, CTAs
-│   │   ├── ValueProps.jsx    # 🚧 TODO - 3 value cards
-│   │   ├── Pricing.jsx       # 🚧 TODO - R380/R2995/R4995 tiers
-│   │   ├── Booking.jsx       # 🚧 TODO - How to book flow
-│   │   ├── Gallery.jsx       # 🚧 TODO - 8 image placeholders
-│   │   ├── Cannabis420.jsx   # 🚧 TODO - 420 policy section
-│   │   ├── Reviews.jsx       # 📋 BACKLOG
-│   │   ├── Location.jsx      # 📋 BACKLOG
-│   │   └── FAQ.jsx           # 📋 BACKLOG
+│   │   ├── ValueProps.jsx    # ✅ COMPLETE - 6 value cards
+│   │   ├── Pricing.jsx       # ✅ COMPLETE - R380/R2995/R4995 tiers
+│   │   ├── Booking.jsx       # ✅ COMPLETE - How to book flow
+│   │   ├── Gallery.jsx       # ✅ COMPLETE - 8 image placeholders
+│   │   ├── Cannabis420.jsx   # ✅ COMPLETE - 420 policy section
+│   │   ├── Amenities.jsx     # ✅ COMPLETE - List of amenities
+│   │   ├── Reviews.jsx       # ✅ COMPLETE - Google reviews showcase
+│   │   ├── Location.jsx      # ✅ COMPLETE - Muizenberg map and info
+│   │   └── FAQ.jsx           # ✅ COMPLETE - Common questions
 │   ├── styles/
 │   │   ├── globals.css       # ✅ Global styles, Tailwind directives
 │   │   └── typography.css    # ✅ LOCKED typography system
@@ -264,17 +265,17 @@ After every significant change, update the **Build Log** section in the [Notion 
 - [x] Create Footer component (4 columns, R500 deposit note)
 - [x] Create Hero section (gradient background, logo placeholder, CTAs)
 
-### 🚧 Phase 2: Content Sections (IN PROGRESS)
-- [ ] Add ValueProps section (3 cards)
-- [ ] Add Pricing section (R380/R2995/R4995 tiers)
-- [ ] Add Booking section (Check Availability + WhatsApp CTAs)
-- [ ] Add Gallery section (8 image placeholders)
-- [ ] Add Cannabis420 section (420 policy)
+### ✅ Phase 2: Content Sections (COMPLETE)
+- [x] Add ValueProps section (3 cards)
+- [x] Add Pricing section (R380/R2995/R4995 tiers)
+- [x] Add Booking section (Check Availability + WhatsApp CTAs)
+- [x] Add Gallery section (8 image placeholders)
+- [x] Add Cannabis420 section (420 policy)
 
-### 📋 Phase 3: Additional Content
-- [ ] Add Reviews section (Google reviews showcase)
-- [ ] Add Location section (Muizenberg map, surf spots, transport)
-- [ ] Add FAQ section (common questions)
+### ✅ Phase 3: Additional Content (COMPLETE)
+- [x] Add Reviews section (Google reviews showcase)
+- [x] Add Location section (Muizenberg map, surf spots, transport)
+- [x] Add FAQ section (common questions)
 
 ### 🎨 Phase 4: Assets & Polish
 - [ ] Generate girl-surfer logo (AI)
@@ -310,5 +311,5 @@ Developed exclusively for Cape Capsules Backpackers.
 
 ---
 
-**Project Status**: 🟢 Phase 1 Complete → Building Content Sections  
+**Project Status**: 🟢 Phase 3 Complete → Polishing Assets
 **Last Updated**: January 9, 2026

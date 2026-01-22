@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo Column */}
           <div className="flex flex-col items-center md:items-start">
             <img 
-              src="/brand/cape-capsules-logo.jpg" 
+              src="/brand/cape-capsules-logo.svg"
               alt="Cape Capsules" 
               className="h-24 w-24 rounded-full border-2 border-white shadow-xl mb-4"
             />

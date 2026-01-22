@@ -29,7 +29,7 @@ const ValueProps = () => {
   ];
 
   return (
-    <section className="section-container bg-brand-sand">
+    <section className="section-container bg-sand-white">
       <h2 className="text-center mb-12">Why Choose Cape Capsules?</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -63,8 +63,8 @@ const Pricing = () => {
       </div>
 
       {/* Deposit Policy */}
-      <div className="bg-brand-yellow bg-opacity-10 border-2 border-brand-yellow rounded-lg p-6 max-w-4xl mx-auto">
-        <h3 className="text-center mb-3 text-brand-red">Important: Deposit Policy</h3>
+      <div className="bg-hut-yellow bg-opacity-10 border-2 border-hut-yellow rounded-lg p-6 max-w-4xl mx-auto">
+        <h3 className="text-center mb-3 text-island-red">Important: Deposit Policy</h3>
         <p className="text-center">
           A R500 refundable deposit is required for all bookings. Foreign guests must pay in cash; South African guests can pay by card with EFT refund.
         </p>

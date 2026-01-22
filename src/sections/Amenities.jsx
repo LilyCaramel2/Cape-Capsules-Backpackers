@@ -22,7 +22,7 @@ const Amenities = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {amenities.map((amenity, index) => (
-          <div key={index} className="bg-brand-sand rounded-lg p-6 border-2 border-gray-200">
+          <div key={index} className="bg-sand-white rounded-lg p-6 border-2 border-gray-200">
             <h3>{amenity.title}</h3>
             <p className="text-gray-600">{amenity.description}</p>
           </div>

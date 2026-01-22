@@ -33,7 +33,7 @@ const Header = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 animate-float">
             <img 
-              src="/brand/cape-capsules-logo.jpg" 
+              src="/brand/cape-capsules-logo.svg"
               alt="Cape Capsules Logo" 
               className="h-16 w-16 md:h-20 md:w-20 rounded-full border-2 border-white shadow-xl hover:scale-110 transition-transform duration-300"
             />

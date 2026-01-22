@@ -28,10 +28,10 @@ const Reviews = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         {reviews.map((review, index) => (
-          <div key={index} className="bg-brand-sand rounded-lg p-6 border-2 border-gray-200">
+          <div key={index} className="bg-sand-white rounded-lg p-6 border-2 border-gray-200">
             <div className="mb-4">
               {[...Array(review.rating)].map((_, i) => (
-                <span key={i} className="text-brand-yellow text-xl">★</span>
+                <span key={i} className="text-hut-yellow text-xl">★</span>
               ))}
             </div>
             <p className="text-gray-700 mb-4">{review.text}</p>
@@ -49,7 +49,7 @@ const Reviews = () => {
           href="https://search.google.com/local/reviews?placeid=ChIJaVzNqZQfzB0RLYrVhB6iM3s" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-brand-blue"
+          className="text-ocean-blue"
         >
           Read More Reviews on Google
         </a>
